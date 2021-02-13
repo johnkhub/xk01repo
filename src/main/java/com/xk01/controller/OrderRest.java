@@ -60,7 +60,7 @@ public class OrderRest {
 	      List<OrderModel> orders = new ArrayList<OrderModel>();
 	      orders =orderServ.findOrderByBidId(stockid);
 	      if (orders.isEmpty()) {
-	          return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	          return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
 	        }
 	        return new ResponseEntity<>(orders,new HttpHeaders(), HttpStatus.OK);
 	      } catch (Exception e) {
